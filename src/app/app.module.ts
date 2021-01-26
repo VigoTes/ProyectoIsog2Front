@@ -7,14 +7,15 @@ import {Route,RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { FormComponent } from './form/form.component';
 import {FormsModule} from '@angular/forms';
-import { NgxPaginationModule} from 'ngx-pagination'
+import { NgxPaginationModule} from 'ngx-pagination';
+import { LoginComponent } from './login/login.component'
 
 const routes:Route[] = [
-  {path:'',component:HomeComponent},
+  {path:'',component:LoginComponent},
   {path:'home',component:HomeComponent},
   {path:'form',component:FormComponent},
   {path:'form/:id',component:FormComponent},
-
+  
 ];
 
 
@@ -22,7 +23,8 @@ const routes:Route[] = [
   declarations: [
     AppComponent,
     HomeComponent,
-    FormComponent
+    FormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
