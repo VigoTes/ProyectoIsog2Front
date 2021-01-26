@@ -1,0 +1,45 @@
+
+<h1>
+  {{!this.editing? 'Registrar Nuevo Producto' : 'Editar producto'}}
+  
+  </h1>
+
+
+
+<form>
+    <div class="form-group">
+      <label for="descripcion">descripcion</label>
+      <input [(ngModel)]="producto.descripcion" type="text" class="form-control" id="descripcion" name="descripcion">
+      
+    </div>
+
+    <div class="form-group">
+      <label for="codcategoria">Categoria</label>
+      <select class="form-control" name="codcategoria" id="codcategoria" [(ngModel)]="producto.codcategoria" > 
+          <option [value]="categoria.codcategoria" *ngFor="let categoria of categorias"> {{categoria.descripcion}} </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="codunidad">Unidad</label>
+      <select class="form-control" name="codunidad" id="codunidad" [(ngModel)]="producto.codunidad" > 
+          <option [value]="unidad.codunidad"  *ngFor="let unidad of unidades"> {{unidad.descripcion}} </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="precio">precio</label>
+      <input [(ngModel)]="producto.precio" type="text" class="form-control" id="precio" name="precio">
+    </div>
+    
+    <div class="form-group">
+      <label for="stock">stock</label>
+      <input [(ngModel)]="producto.stock" type="text" class="form-control" id="stock" name="stock">
+    </div>
+      
+
+
+    <button (click)="SaveProductos()"  class="btn btn-primary">Grabar</button>
+    <button (click)="Cancelar()" class="btn btn-primary">Cancelar</button>
+    
+  </form>
